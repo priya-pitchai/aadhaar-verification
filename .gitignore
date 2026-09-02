@@ -6,7 +6,6 @@ __pycache__/
 test-data/
 *.zip
 *.xml
-*.pem
 *.xmlcd
 
 # Local/environment secrets
