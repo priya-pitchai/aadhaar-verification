@@ -1,0 +1,21 @@
+EXPECTED FAILURE
+ValueError: UIDAI certificate chain validation failed: C = IN, O = Gujarat Narmada Valley Fertilizers and Chemicals Limited, OU = Sub-CA, CN = (n)Code Solutions Sub-CA for DSC 2022
+error 20 at 1 depth lookup: unable to get local issuer certificate
+error certs/uidai_offline_publickey_2026.cer: verification failed
+
+---script
+python - <<'PY'
+from verify_aadhaar import verify_certificate_chain
+
+try:
+    verify_certificate_chain(
+        uidai_cert_path="certs/uidai_offline_publickey_2026.cer",
+        root_ca_path="certs/CCAIndia2022.cer",
+        intermediates_path="results/broken_intermediates.pem",
+    )
+    print("UNEXPECTED: Chain accepted")
+
+except Exception as exc:
+    print("EXPECTED FAILURE")
+    print(type(exc).__name__ + ":", str(exc))
+PY

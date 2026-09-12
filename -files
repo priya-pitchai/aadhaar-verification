@@ -1,0 +1,28 @@
+[33mcommit c261f8b2b329fd33827c3da94e2d899886704e42[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Priya <priyapitchai.c@gmail.com>
+Date:   Wed Sep 2 22:28:49 2026 +0530
+
+    Add PKI certificate chain for Aadhaar verification
+
+ .gitignore                    |  1 [31m-[m
+ certs/ncode_ca_2022.pem       | 34 [32m++++++++++++++++++++++++++++++[m
+ certs/ncode_intermediates.pem | 70 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ certs/ncode_subca_2022.pem    | 36 [32m+++++++++++++++++++++++++++++++[m
+ 4 files changed, 140 insertions(+), 1 deletion(-)
+
+[33mcommit d7866aba9e8e4e39a92bd42f8355448e6c4b742f[m
+Author: Priya <priyapitchai.c@gmail.com>
+Date:   Wed Sep 2 20:59:06 2026 +0530
+
+    Implement Aadhaar XML signature
+
+ .gitignore                             |  16 [32m++[m
+ certs/CCAIndia2022.cer                 |  30 [32m++++[m
+ certs/ncode_ca_2022.der                | Bin [31m0[m -> [32m1522[m bytes
+ certs/ncode_subca_2022.der             | Bin [31m0[m -> [32m1593[m bytes
+ certs/uidai_offline_publickey_2026.cer |  44 [32m+++++[m
+ check_cert.py                          | 115 [32m+++++++++++++[m
+ diagnose_rsa_digest.py                 | 263 [32m++++++++++++++++++++++++++++++[m
+ diagnose_signature.py                  | 260 [32m+++++++++++++++++++++++++++++[m
+ verify_aadhaar.py                      | 451 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ 9 files changed, 1179 insertions(+)

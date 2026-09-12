@@ -1,0 +1,16 @@
+1. Verifying UIDAI PKI certificate chain...
+   PKI certificate chain: VALID
+2. Checking UIDAI certificate revocation...
+   CRL signature       : VALID
+   CRL freshness       : VALID
+   UIDAI certificate   : NOT REVOKED
+   Certificate revocation check: PASSED
+3. Reading encrypted Aadhaar ZIP...
+   XML extracted successfully
+4. Inspecting digital signature...
+   Signature algorithm: http://www.w3.org/2000/09/xmldsig#rsa-sha1
+   Digest algorithm: http://www.w3.org/2001/04/xmlenc#sha256
+5. Verifying UIDAI digital signature...
+
+Verification FAILED
+ValueError: Aadhaar XML digital signature verification failed

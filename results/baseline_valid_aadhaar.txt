@@ -1,0 +1,26 @@
+1. Verifying UIDAI PKI certificate chain...
+   PKI certificate chain: VALID
+2. Checking UIDAI certificate revocation...
+   CRL signature       : VALID
+   CRL freshness       : VALID
+   UIDAI certificate   : NOT REVOKED
+   Certificate revocation check: PASSED
+3. Reading encrypted Aadhaar ZIP...
+   XML extracted successfully
+4. Inspecting digital signature...
+   Signature algorithm: http://www.w3.org/2000/09/xmldsig#rsa-sha1
+   Digest algorithm: http://www.w3.org/2001/04/xmlenc#sha256
+5. Verifying UIDAI digital signature...
+   Signature verification: VALID
+6. Parsing verified Aadhaar data...
+
+--- Verification Result ---
+PKI chain valid  : YES
+Signature valid  : YES
+Reference ID     : ****13849846
+Name parsed      : True
+DOB parsed       : True
+Gender parsed    : True
+Photo present    : True
+Mobile hash      : True
+Email hash       : False

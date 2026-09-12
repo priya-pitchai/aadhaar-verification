@@ -1,0 +1,6 @@
+1. Verifying UIDAI PKI certificate chain...
+
+Verification FAILED
+ValueError: UIDAI certificate chain validation failed: C = IN, O = Test Organization, CN = Fake UIDAI Certificate
+error 18 at 0 depth lookup: self-signed certificate
+error test-data/fake_uidai_cert.pem: verification failed

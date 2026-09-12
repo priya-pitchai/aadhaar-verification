@@ -1,0 +1,42 @@
+EXPECTED FAILURE
+ValueError: CRL is stale or expired. Download the latest CRL.
+
+
+---script:
+python - <<'PY' | tee results/PKI-NEG-03_stale_crl.txt
+import verify_aadhaar
+from datetime import datetime as RealDateTime, timezone
+
+
+class FakeDateTime(RealDateTime):
+    @classmethod
+    def now(cls, tz=None):
+        return RealDateTime(
+            2026, 9, 12, 12, 0, 0,
+            tzinfo=timezone.utc
+        )
+
+
+# Simulate verification occurring after CRL nextUpdate
+verify_aadhaar.datetime = FakeDateTime
+
+
+try:
+    verify_aadhaar.verify_certificate_revocation(
+        uidai_cert_path=
+            "certs/uidai_offline_publickey_2026.cer",
+
+        crl_path=
+            "certs/ncode_subca_2022.crl",
+
+        issuer_cert_path=
+            "certs/ncode_subca_2022.pem",
+    )
+
+    print("UNEXPECTED: Stale CRL accepted")
+
+
+except Exception as exc:
+    print("EXPECTED FAILURE")
+    print(type(exc).__name__ + ":", str(exc))
+PY
