@@ -1,0 +1,22 @@
+test_aadhaar_failure_prevents_pan_verification (test_kyc_integration.TestKYCIntegration.test_aadhaar_failure_prevents_pan_verification) ... ok
+test_dob_mismatch_returns_review_required (test_kyc_integration.TestKYCIntegration.test_dob_mismatch_returns_review_required) ... ok
+test_matching_aadhaar_and_pan_returns_verified (test_kyc_integration.TestKYCIntegration.test_matching_aadhaar_and_pan_returns_verified) ... ok
+test_name_mismatch_returns_review_required (test_kyc_integration.TestKYCIntegration.test_name_mismatch_returns_review_required) ... ok
+test_pan_not_found_returns_rejected (test_kyc_integration.TestKYCIntegration.test_pan_not_found_returns_rejected) ... ok
+test_verified_aadhaar_identity_passed_to_pan (test_kyc_integration.TestKYCIntegration.test_verified_aadhaar_identity_passed_to_pan) ... ok
+test_dob_mismatch_requires_review (test_pan_verification.TestPANVerification.test_dob_mismatch_requires_review) ... ok
+test_name_mismatch_requires_review (test_pan_verification.TestPANVerification.test_name_mismatch_requires_review) ... ok
+test_pan_not_found (test_pan_verification.TestPANVerification.test_pan_not_found) ... ok
+test_valid_pan_identity_match (test_pan_verification.TestPANVerification.test_valid_pan_identity_match) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.003s
+
+OK
+
+=================
+command:
+ python -m unittest discover \
+  -s tests \
+  -p "test_*.py" \
+  -v 2>&1 | tee results/kyc-full-regression.txt
