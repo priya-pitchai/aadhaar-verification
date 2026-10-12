@@ -15,8 +15,8 @@ from pan_verification.validator import validate_pan_format
 
 MOCK_PAN_RECORDS = {
     "ABCDE1234F": {
-        "name": "TEST INVESTOR",
-        "dob": date(1990, 1, 1),
+        "name": "Priya P",
+        "dob": date(1999, 4, 8),
         "status": PANStatus.VALID,
         "operative": True,
     },
