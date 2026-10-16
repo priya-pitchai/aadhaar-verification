@@ -498,7 +498,7 @@ def extract_xml_from_zip(
 
         if len(xml_files) == 0:
 
-            raise wqaValueError(
+            raise ValueError(
                 "No XML file found inside Aadhaar ZIP"
             )
 
